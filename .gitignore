@@ -3,3 +3,7 @@
 *~*
 Tema2-1.ipynb
 *Rhistory*
+*.log
+*.spl
+*.aux
+task*/outputs/
