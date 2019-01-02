@@ -5,16 +5,39 @@
 \expandafter\ifx\csname href\endcsname\relax
   \def\href#1#2{#2} \def\path#1{#1}\fi
 
-\bibitem{Feynman1963118}
-R.~Feynman, F.~{Vernon Jr.}, The theory of a general quantum system interacting
-  with a linear dissipative system, Annals of Physics 24 (1963) 118--173.
-\newblock \href {http://dx.doi.org/10.1016/0003-4916(63)90068-X}
-  {\path{doi:10.1016/0003-4916(63)90068-X}}.
+\bibitem{Dean:2004:MSD:1251254.1251264}
+J.~Dean, S.~Ghemawat,
+  \href{http://dl.acm.org/citation.cfm?id=1251254.1251264}{Mapreduce:
+  Simplified data processing on large clusters}, in: Proceedings of the 6th
+  Conference on Symposium on Opearting Systems Design \& Implementation -
+  Volume 6, OSDI'04, USENIX Association, Berkeley, CA, USA, 2004, pp. 10--10.
+\newline\urlprefix\url{http://dl.acm.org/citation.cfm?id=1251254.1251264}
 
-\bibitem{Dirac1953888}
-P.~Dirac, The lorentz transformation and absolute time, Physica 19~(1-–12)
-  (1953) 888--896.
-\newblock \href {http://dx.doi.org/10.1016/S0031-8914(53)80099-6}
-  {\path{doi:10.1016/S0031-8914(53)80099-6}}.
+\bibitem{Russell:2003:AIM:773294}
+S.~J. Russell, P.~Norvig, Artificial Intelligence: A Modern Approach, 2nd
+  Edition, Pearson Education, 2003.
+
+\bibitem{Groman:1996:ESH:381984.381988}
+R.~C. Groman, \href{http://doi.acm.org/10.1145/381984.381988}{Elsevier
+  science's home page: Sign of the times}, SIGIR Forum 30~(1) (1996) 42--.
+\newblock \href {http://dx.doi.org/10.1145/381984.381988}
+  {\path{doi:10.1145/381984.381988}}.
+\newline\urlprefix\url{http://doi.acm.org/10.1145/381984.381988}
+
+\bibitem{tensorflow2015-whitepaper}
+M.~Abadi, A.~Agarwal, P.~Barham, E.~Brevdo, Z.~Chen, C.~Citro, G.~S. Corrado,
+  A.~Davis, J.~Dean, M.~Devin, S.~Ghemawat, I.~Goodfellow, A.~Harp, G.~Irving,
+  M.~Isard, Y.~Jia, R.~Jozefowicz, L.~Kaiser, M.~Kudlur, J.~Levenberg,
+  D.~Man\'{e}, R.~Monga, S.~Moore, D.~Murray, C.~Olah, M.~Schuster, J.~Shlens,
+  B.~Steiner, I.~Sutskever, K.~Talwar, P.~Tucker, V.~Vanhoucke, V.~Vasudevan,
+  F.~Vi\'{e}gas, O.~Vinyals, P.~Warden, M.~Wattenberg, M.~Wicke, Y.~Yu,
+  X.~Zheng, \href{https://www.tensorflow.org/}{{TensorFlow}: Large-scale
+  machine learning on heterogeneous systems}, software available from
+  tensorflow.org (2015).
+\newline\urlprefix\url{https://www.tensorflow.org/}
+
+\bibitem{Narkhede:2017:KDG:3175825}
+N.~Narkhede, G.~Shapira, T.~Palino, Kafka: The Definitive Guide Real-Time Data
+  and Stream Processing at Scale, 1st Edition, O'Reilly Media, Inc., 2017.
 
 \end{thebibliography}

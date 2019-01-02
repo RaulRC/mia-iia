@@ -1,6 +1,9 @@
 \documentclass[review]{elsarticle}
 
 \usepackage{lineno,hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{caption}
 \modulolinenumbers[5]
 
 \journal{Journal of \LaTeX\ Templates}
@@ -41,72 +44,85 @@
 
 \begin{frontmatter}
 
-\title{Elsevier \LaTeX\ template\tnoteref{mytitlenote}}
-\tnotetext[mytitlenote]{Fully documented templates are available in the elsarticle package on \href{http://www.ctan.org/tex-archive/macros/latex/contrib/elsarticle}{CTAN}.}
+\title{Investigaci\'on en Inteligencia Artificial\\Actividad 3\\Introducci\'on a \LaTeX\ }
 
 %% Group authors per affiliation:
-\author{Elsevier\fnref{myfootnote}}
-\address{Radarweg 29, Amsterdam}
-\fntext[myfootnote]{Since 1880.}
+\author{Ra\'ul Reguillo Carmona}
 
 %% or include affiliations in footnotes:
-\author[mymainaddress,mysecondaryaddress]{Elsevier Inc}
-\ead[url]{www.elsevier.com}
-
-\author[mysecondaryaddress]{Global Customer Service\corref{mycorrespondingauthor}}
-\cortext[mycorrespondingauthor]{Corresponding author}
-\ead{support@elsevier.com}
-
-\address[mymainaddress]{1600 John F Kennedy Boulevard, Philadelphia}
-\address[mysecondaryaddress]{360 Park Avenue South, New York}
 
 \begin{abstract}
-This template helps you to create a properly formatted \LaTeX\ manuscript.
+  En este documento se va a abordar la Actividad 3 de la asignatura Introducción a la Inteligencia Artificial. En esta actividad se elaborará un documento en \LaTeX\ haciendo uso de diversas características de éste, tales como la manipulación de tablas, imágenes o referencias bibliográficas. Se utilizará para ello la plantilla de \LaTeX\ de la revista Elsevier. 
 \end{abstract}
 
 \begin{keyword}
 \texttt{elsarticle.cls}\sep \LaTeX\sep Elsevier \sep template
-\MSC[2010] 00-01\sep  99-00
 \end{keyword}
 
 \end{frontmatter}
 
 \linenumbers
 
-\section{The Elsevier article class}
+\section{Introducción}
 
-\paragraph{Installation} If the document class \emph{elsarticle} is not available on your computer, you can download and install the system package \emph{texlive-publishers} (Linux) or install the \LaTeX\ package \emph{elsarticle} using the package manager of your \TeX\ installation, which is typically \TeX\ Live or Mik\TeX.
+A la hora de trabajar con documentos en el ámbito científico, nos encontramos con unos requisitos de formato y calidad que las herramientas convencionales, prácticas para el trabajo diario, adolecen a la hora de abordar. No hablamos únicamente de problemas en el trabajo con fórmulas o tablas, sino también gestión de diversos archivos y formateo automático de los mismos. En mi experiencia personal, maquetar un libro de más de quinientas páginas con Microsoft Word comenzaba a ser tedioso en el momento en que el archivo ocupaba ya un tamaño y la agregación de partes de otros autores, editadas en otras versiones del programa, ralentizaba mucho el proceso de homogeneización. 
 
-\paragraph{Usage} Once the package is properly installed, you can use the document class \emph{elsarticle} to create a manuscript. Please make sure that your manuscript follows the guidelines in the Guide for Authors of the relevant journal. It is not necessary to typeset your manuscript in exactly the same way as an article, unless you are submitting to a camera-ready copy (CRC) journal.
+En el presente documento se realizará una demostración de cómo \LaTeX\ resulta ser una herramienta potentísima a la hora de realizar textos científicos, ilustrándolo a través del trabajo con los elementos típicos que se manejan en esta clase de documentos: tablas, figuras, ecuaciones y referencias bibliográficas.
 
-\paragraph{Functionality} The Elsevier article class is based on the standard article class and supports almost all of the functionality of that class. In addition, it features commands and options to format the
-\begin{itemize}
-\item document style
-\item baselineskip
-\item front matter
-\item keywords and MSC codes
-\item theorems, definitions and proofs
-\item lables of enumerations
-\item citation style and labeling.
-\end{itemize}
+\section{Usando tablas}
 
-\section{Front matter}
+En esta sección se va a tratar el manejo de tablas con el entorno \texttt{tabular}. En ocasiones el trabajo con tablas puede resultar algo complejo si no se lleva un orden, especialmente cuando se pretenden elaborar tablas complejas con fundido de celdas y múltiples columnas. No obstante, una vez se domina, resulta muy práctico y da como resultados tablas elegantes que admiten muchos estilos. Vemos un ejemplo a continuación. 
 
-The author names and affiliations could be formatted in two ways:
-\begin{enumerate}[(1)]
-\item Group the authors per affiliation.
-\item Use footnotes to indicate the affiliations.
-\end{enumerate}
-See the front matter of this document for examples. You are recommended to conform your choice to the journal you are submitting to.
+\input{tables/table_example.tex}
 
-\section{Bibliography styles}
+\section{Trabajo con figuras}
 
-There are various bibliography styles available. You can select the style of your choice in the preamble of this document. These styles are Elsevier styles based on standard styles like Harvard and Vancouver. Please use Bib\TeX\ to generate your bibliography and include DOIs whenever available.
+Para trabajar con figuras, \LaTeX\ utiliza el entorno \texttt{figure}. Admite algunos parámetros tales como las dimensiones de la imagen, el posicionamiento, etiquetado (para hacer referencias y enlazarlas tal que así: Figura ~\ref{fig:unir}) y el \textit{caption} de la figura en sí misma, para añadir un texto explicativo sobre la misma. Automáticamente controlará el número con el que se etiqueta la figura. Vemos un ejemplo a continuación con el logotipo de UNIR. 
 
-Here are two sample references: \cite{Feynman1963118},\cite{Dirac1953888}.
+\begin{figure}[!h]
+  \begin{center}
+    \includegraphics[width=0.45\textwidth]{figures/unir.jpg} 
+    \caption{Logotipo de UNIR}
+    \label{fig:unir}
+  \end{center}
+\end{figure}
 
+\section{Ejemplos con ecuaciones}
+
+Una de las principales ventajas de \LaTeX\ reside en la facilidad con la que se pueden definir fórmulas con el operador \$ o el entorno \texttt{equation}.
+
+Aquí podemos ver un ejemplo de una ecuación conocida:  $E=mc^2$. Como vemos, está en la misma línea que el resto del texto. Podemos insertarlas de manera más formal con el nombrado entorno \texttt{equation} como sigue:
+
+\begin{equation} \label{eq:Euler} 
+  e^{\pi i} - 1 = 0
+\end{equation}
+
+O algo más complejo:
+
+\begin{equation} \label{eq:secondgrade} 
+  x = \frac{-b \pm{\sqrt{b^2 -4ac}}}{2a}
+\end{equation}
+
+\LaTeX\ también define comandos para símbolos especiales y facilita mucho la inclusión de éstos en ecuaciones. Vemos ahora una más completa.
+
+
+\begin{equation} \label{eq:equation} 
+  \beta = \int_{a}^{b}{\frac{(x^2 + 3x)}{2e^x}dx}
+\end{equation}
+
+Como vemos, las fórmulas expuestas son muy legibles y pueden ser tan sencillas como la Identidad de Euler (Ecuación ~\ref{eq:Euler} ) o la fórmula de Bhaskara (Ecuación ~\ref{eq:secondgrade} ) o complicarlas más como la ecuación completamente inventada ~\ref{eq:equation} en la que se muestran integrales y letras griegas. 
+
+
+\section{Referencias bibliográficas}
+
+A la hora de gestionar las referencias, únicamente tendremos que incluirlas en el archivo auxiliar con extensión \texttt{.bib} y compilarlo antes de compilar el archivo \textit{.tex}. Vemos un ejemplo de referencia en \cite{Dean:2004:MSD:1251254.1251264} con el famoso artículo de \textit{Map Reduce}.
+
+Igualmente pueden referenciarse libros. Aquí un ejemplo con el famoso libro de Russell y Norvig \cite{Russell:2003:AIM:773294}.
+
+A medida que enriquecemos la referencia incluyendo campos, éstos se mostrarán prefectamente formateados en el artículo. Podemos contrastarlo en \cite{Groman:1996:ESH:381984.381988}. Por otra parte si tenemos referencias que no se utilizan (no existe citación), éstas no figurarán en la lista final del artículo, lo que resulta práctico para mantener unos pocos archivos de bibliografía y no tener que generar ésta cada vez que escribamos un artículo. 
+Se incluye alguna referencia más, en este caso a un artículo de TensorFlow \cite{tensorflow2015-whitepaper} y un libro acerca de Kafka \cite{Narkhede:2017:KDG:3175825} para completar el ejercicio. 
 \section*{References}
 
-\bibliography{mybibfile}
+\bibliography{Raul_Reguillo_Carmona_Actividad_3}
 
 \end{document}
