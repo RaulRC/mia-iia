@@ -1,10 +1,14 @@
 CC=pdflatex
 BIB=bibtex
+NAME=Raul_Reguillo_Carmona_Actividad_3
 
-document: Raul_Reguillo_Carmona_Actividad_3.tex
-	$(CC) Raul_Reguillo_Carmona_Actividad_3.tex
+document: $(NAME).tex
+	$(CC) $(NAME).tex
 
-bib: Raul_Reguillo_Carmona_Actividad_3.aux Raul_Reguillo_Carmona_Actividad_3.tex
-	$(BIB) Raul_Reguillo_Carmona_Actividad_3.aux
-	$(CC) Raul_Reguillo_Carmona_Actividad_3.tex
-	$(CC) Raul_Reguillo_Carmona_Actividad_3.tex
+bib: $(NAME).aux $(NAME).tex
+	$(BIB) $(NAME).aux
+	$(CC) $(NAME).tex
+	$(CC) $(NAME).tex
+
+clean:
+	rm *~
