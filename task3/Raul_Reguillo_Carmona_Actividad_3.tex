@@ -44,7 +44,7 @@
 
 \begin{frontmatter}
 
-\title{Investigaci\'on en Inteligencia Artificial\\Actividad 3\\Introducci\'on a \LaTeX\ }
+\title{Investigaci\'on en Inteligencia Artificial\\Actividad 3\\Introducci\'on al método científico en investigación}
 
 %% Group authors per affiliation:
 \author{Ra\'ul Reguillo Carmona}
@@ -52,7 +52,7 @@
 %% or include affiliations in footnotes:
 
 \begin{abstract}
-  En este documento se va a abordar la Actividad 3 de la asignatura Introducción a la Inteligencia Artificial. En esta actividad se elaborará un documento en \LaTeX\ haciendo uso de diversas características de éste, tales como la manipulación de tablas, imágenes o referencias bibliográficas. Se utilizará para ello la plantilla de \LaTeX\ de la revista Elsevier. 
+  En este documento se va a abordar la Actividad 3 de la asignatura Introducción a la Inteligencia Artificial. En esta actividad se elaborará un documento en \LaTeX\ haciendo uso de diversas características de éste, tales como la manipulación de tablas, imágenes o referencias bibliográficas. Se utilizará para ello la plantilla de \LaTeX\ de la revista Elsevier. Se guiará el documento como un resumen del tercer tema de la asignatura, homónimo a este documento.  
 \end{abstract}
 
 \begin{keyword}
@@ -65,17 +65,33 @@
 
 \section{Introducción}
 
-A la hora de trabajar con documentos en el ámbito científico, nos encontramos con unos requisitos de formato y calidad que las herramientas convencionales, prácticas para el trabajo diario, adolecen a la hora de abordar. No hablamos únicamente de problemas en el trabajo con fórmulas o tablas, sino también gestión de diversos archivos y formateo automático de los mismos. 
+Podemos definir el \textbf{método científico} a través de los siguientes pasos:
+
+\begin{enumerate}
+\item Observación: de un aspecto de la realidad, lo que implica la adquisición de datos sobre dicho suceso.
+\item Hipótesis: en base a los datos, se plantean hipótesis sobre el fenómeno en cuestión.
+\item Experimentación: donde se llevan a cabo los experimentos oportunos para confirmar o refutar hipótesis.
+\item Conclusión: extraídas de una iteración indeterminada sobre los dos pasos anteriores hasta llegar a una respuesta. 
+\end{enumerate}
+
+La documentación de este proceso debe ser igualmente rigurosa y metodológica. A la hora de trabajar con documentos en el ámbito del método científico, nos encontramos con unos requisitos de formato y calidad que las herramientas convencionales, prácticas para el trabajo diario, adolecen a la hora de abordar. No hablamos únicamente de problemas en el trabajo con fórmulas o tablas, sino también gestión de diversos archivos y formateo automático de los mismos. 
 
 En el presente documento se realizará una demostración de cómo \LaTeX\ resulta ser una herramienta potentísima a la hora de realizar textos científicos, ilustrándolo a través del trabajo con los elementos típicos que se manejan en esta clase de documentos: tablas, figuras, ecuaciones y referencias bibliográficas.
 
-\section{Usando tablas}
+Esta documentación debe de ir de la mano de una correcta gestión de las referencias bibliográficas en el proceso de la documentación del \textbf{estado del arte} de la disciplina. Para ello, igualmente existen herramientas (tales como \href{https://www.mendeley.com}{Mendeley} o \href{https://www.refworks.com/es/}{RefWorks}).
+
+El proceso hasta que un documento científico ve la luz puede ser largo y envuelve numerosas iteraciones sobre pasos de revisión y corrección hasta que finalmente la revista lo acepta y publica. Esto asegura unos mínimos de calidad en las publicaciones, necesario en el ámbito científico. 
+
+\section{Principales características de \LaTeX\ }
+
+A continuación, vamos a centrarnos en el manejo de esta herramienta para la elaboración de textos científicos a través de una serie de propiedades. 
+\subsection{Usando tablas}
 
 En esta sección se va a tratar el manejo de tablas con el entorno \texttt{tabular}. En ocasiones el trabajo con tablas puede resultar algo complejo si no se lleva un orden, especialmente cuando se pretenden elaborar tablas complejas con fundido de celdas y múltiples columnas. No obstante, una vez se domina, resulta muy práctico y da como resultados tablas elegantes que admiten muchos estilos. Vemos un ejemplo sencillo a continuación. 
 
 \input{tables/table_example.tex}
 
-\section{Trabajo con figuras}
+\subsection{Trabajo con figuras}
 
 Para trabajar con figuras, \LaTeX\ utiliza el entorno \texttt{figure}. Admite algunos parámetros tales como las dimensiones de la imagen, el posicionamiento, etiquetado (para hacer referencias y enlazarlas tal que así: Figura ~\ref{fig:unir}) y el \textit{caption} de la figura en sí misma, para añadir un texto explicativo sobre la misma. Automáticamente controlará el número con el que se etiqueta la figura. Vemos un ejemplo a continuación con el logotipo de UNIR. 
 
@@ -87,7 +103,7 @@ Para trabajar con figuras, \LaTeX\ utiliza el entorno \texttt{figure}. Admite al
   \end{center}
 \end{figure}
 
-\section{Ejemplos con ecuaciones}
+\subsection{Ejemplos con ecuaciones}
 
 Una de las principales ventajas de \LaTeX\ reside en la facilidad con la que se pueden definir fórmulas con el operador \$ o el entorno \texttt{equation}.
 
@@ -113,15 +129,20 @@ O algo más complejo:
 Como vemos, las fórmulas expuestas son muy legibles y pueden ser tan sencillas como la Identidad de Euler (Ecuación ~\ref{eq:Euler} ) o la fórmula de Bhaskara (Ecuación ~\ref{eq:secondgrade} ) o complicarlas más como la ecuación completamente inventada ~\ref{eq:equation} en la que se muestran integrales y letras griegas. 
 
 
-\section{Referencias bibliográficas}
+\subsection{Referencias bibliográficas}
 
 A la hora de gestionar las referencias, únicamente tendremos que incluirlas en el archivo auxiliar con extensión \texttt{.bib} y compilarlo antes de compilar el archivo \textit{.tex}. Vemos un ejemplo de referencia en \cite{Dean:2004:MSD:1251254.1251264} con el famoso artículo de \textit{Map Reduce}.
 
 Igualmente pueden referenciarse libros. Aquí un ejemplo con el famoso libro de Russell y Norvig \cite{Russell:2003:AIM:773294}.
 
 A medida que enriquecemos la referencia incluyendo campos, éstos se mostrarán prefectamente formateados en el artículo. Podemos contrastarlo en \cite{Groman:1996:ESH:381984.381988}. Por otra parte si tenemos referencias que no se utilizan (no existe citación), éstas no figurarán en la lista final del artículo, lo que resulta práctico para mantener unos pocos archivos de bibliografía y no tener que generar ésta cada vez que escribamos un artículo. 
-Se incluye alguna referencia más, en este caso a un artículo de TensorFlow \cite{tensorflow2015-whitepaper} y un libro acerca de Kafka \cite{Narkhede:2017:KDG:3175825} para completar el ejercicio. 
-\section*{References}
+Se incluye alguna referencia más, en este caso a un artículo de TensorFlow \cite{tensorflow2015-whitepaper} y un libro acerca de Kafka \cite{Narkhede:2017:KDG:3175825} para completar el ejercicio.
+
+\section{Conclusiones}
+
+En este documento hemos profundizado en el uso de \LaTeX\ como editor de textos utilizando la plantilla \textit{Elsevier} como patrón para la elaboración de un artículo, siguiendo el esquema de los textos científicos publicados en revistas. La versatilidad y potencia que ofrece esta herramienta la convierten en el estándar \textit{de facto} para la elaboración de esta clase de documentos. 
+
+\section*{}
 
 \bibliography{Raul_Reguillo_Carmona_Actividad_3}
 
