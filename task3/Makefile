@@ -2,18 +2,11 @@ CC=pdflatex
 BIB=bibtex
 NAME=Raul_Reguillo_Carmona_Actividad_3
 
-run: document
-
-document: bib
-	$(CC) $(NAME).tex
-
-bib: document
+all : $(NAME).tex $(NAME).bib
 	$(CC) $(NAME).tex
 	$(BIB) $(NAME).aux
 	$(CC) $(NAME).tex
+	$(CC) $(NAME).tex
 
-clean: bib
+clean : *~
 	rm *~
-
-show: clean
-	evince $(NAME).pdf
